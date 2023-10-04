@@ -5,7 +5,7 @@
 Author:  Mohamed
 ID:      169072233
 Email:   alda2233@mylaurier.ca
-__updated__ = "2023-10-02"
+__updated__ = "2023-10-04"
 -------------------------------------------------------
 """
 # Imports
@@ -50,7 +50,8 @@ def square_pyramid(base, height):
 
 
 def total_change(nickels, dimes, quarters, loonies, toonies):
-    """
+    """ 
+    -------------------------------------------------------
     Calculates the total value of a set of coins in dollars.
     Each coin is worth:
         nickel:  $0.05
@@ -60,6 +61,16 @@ def total_change(nickels, dimes, quarters, loonies, toonies):
         toonie:  $2.00
     Use: total = total_change(nickels, dimes, quarters,
         loonies, toonies)
+    -------------------------------------------------------
+    Parameters:
+        nickels - number of nickels (int >= 0)
+        dimes - number of dimes (int >= 0)
+        quarters - number of quarters (int >= 0)
+        loonies - number of loonies (int >= 0)
+        toonies - number of toonies (int >= 0)
+    Returns:
+        total - total value of coins (float)
+    -------------------------------------------------------
     """
 
     NICKEL_VALUE = 0.05

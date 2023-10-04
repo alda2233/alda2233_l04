@@ -5,7 +5,7 @@
 Author:  Mohamed
 ID:      169072233
 Email:   alda2233@mylaurier.ca
-__updated__ = "2023-10-02"
+__updated__ = "2023-10-04"
 -------------------------------------------------------
 """
 # Imports
@@ -27,5 +27,5 @@ def func():
     """
 
 
-diam = diameter(2.5)
+diam = diameter(float(input()))
 print(diam)
