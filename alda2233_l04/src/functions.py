@@ -5,11 +5,11 @@
 Author:  Mohamed
 ID:      169072233
 Email:   alda2233@mylaurier.ca
-__updated__ = "2023-10-04"
+__updated__ = "2023-10-05"
 -------------------------------------------------------
 """
 # Imports
-
+import math
 # Constants
 
 
@@ -48,6 +48,12 @@ def square_pyramid(base, height):
     ------------------------------------------------------
     """
 
+    sh = math.sqrt((base/2)**2 + (height**2))
+    area = base**2 + 2 * base * sh
+    vol = (base**2 * height) / 3
+
+    return sh, area, vol
+
 
 def total_change(nickels, dimes, quarters, loonies, toonies):
     """ 
@@ -82,3 +88,48 @@ def total_change(nickels, dimes, quarters, loonies, toonies):
     total = nickels*NICKEL_VALUE + dimes*DIME_VALUE + quarters * \
         QUARTER_VALUE + loonies*LOONIE_VALUE + toonies*TOONIE_VALUE
     return total
+
+
+def slope(x1, y1, x2, y2):
+    """  -------------------------------------------------------
+Calculates the slope of a line. Slope is calculated as
+rise / run, where rise is distance between y coordinates,
+and run is distance between x coordinates.
+Use: slp = slope(x1, y1, x2, y2)
+-------------------------------------------------------
+Parameters:
+    x1 - x coordinate of first point on a graph (float)
+    y1 - y coordinate of first point on a graph (float)
+    x2 - x coordinate of second point on a graph (float)
+    y2 - y coordinate of second point on a graph (float)
+    x2 != x1
+Returns:
+    slp - slope of the line through (x1,y1) and (x2,y2)
+-------------------------------------------------------
+    """
+    rise = y2 - y1
+    run = x2 - x1
+    slp = rise / run
+    return slp
+
+
+def time_values(seconds):
+    """
+    -------------------------------------------------------
+    Returns seconds in different formats.
+    Use: days, hours, minutes = time_values(seconds)
+    -------------------------------------------------------
+    Parameters:
+        seconds - total seconds (int >= 0)
+    Returns:
+        days - number of days in total_seconds (int >= 0)
+        hours - number of hours in total_seconds (int >= 0)
+        minutes - number of minutes in total_seconds (int >= 0)
+    -------------------------------------------------------
+    """
+
+    CALC = 60
+    minutes = seconds//CALC
+    hours = minutes//CALC
+    days = hours//24
+    return int(days), int(hours), int(minutes)
